@@ -1,1142 +1,1026 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Balsa Branca | Serviços Portuários</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(22,141,204,.15), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(84,207,255,.08), transparent 35%),
+        #071923;
+    color: #fff;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(6,36,61,.90);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 25px;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #54cfff;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: #dcecf4;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .2s;
+}
+
+nav a:hover {
+    color: #54cfff;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 620px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 20px 70px;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(3,20,32,.88),
+            rgba(3,25,40,.60),
+            rgba(3,20,32,.35)
+        ),
+        url("./img/balsasa.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.hero-box {
+    max-width: 600px;
+
+    background: rgba(3,24,39,.72);
+    border: 1px solid rgba(84,207,255,.15);
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Balsa Branca | Serviços Portuários</title>
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #e8f4fa;
+    border-radius: 18px;
 
-            background:
-                radial-gradient(circle at 20% 20%, rgba(0, 180, 255, .08), transparent 35%),
-                radial-gradient(circle at 80% 80%, rgba(0, 100, 180, .08), transparent 35%),
-                #06111a;
+    padding: 38px;
 
-            background-attachment: fixed;
-        }
+    box-shadow: 0 20px 60px rgba(0,0,0,.30);
+}
 
-        /* =========================
-           HEADER
-        ========================= */
+.hero-tag {
+    color: #54cfff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
 
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 15px;
+}
 
-            background: rgba(4, 14, 23, .92);
-            backdrop-filter: blur(12px);
+.hero p {
+    color: #d7e7ed;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
 
-            border-bottom: 1px solid rgba(0, 190, 255, .18);
-        }
+.hero-button {
+    display: inline-block;
+
+    background: #168dcc;
+    color: white;
 
-        nav {
-            max-width: 1200px;
-            margin: auto;
+    text-decoration: none;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    padding: 13px 22px;
+    border-radius: 9px;
 
-            padding: 18px 25px;
-        }
+    font-weight: bold;
 
-        .logo {
-            color: #fff;
-            font-size: 21px;
-            font-weight: bold;
-            text-decoration: none;
-        }
+    transition: .2s;
+}
 
-        .logo span {
-            color: #00bfff;
-        }
+.hero-button:hover {
+    background: #54cfff;
+    color: #06243d;
+    transform: translateY(-2px);
+}
 
-        nav ul {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
+/* =========================
+   SECTIONS
+========================= */
 
-        nav ul li a {
-            color: #dceef7;
-            text-decoration: none;
-            font-size: 14px;
-            transition: .3s;
-        }
+section {
+    padding: 75px 20px;
+}
 
-        nav ul li a:hover {
-            color: #00c8ff;
-        }
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
 
-        /* =========================
-           HERO
-        ========================= */
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
 
-        .hero {
-            min-height: 100vh;
+.section-title h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
 
-            display: flex;
-            align-items: center;
+.section-title p {
+    color: #91aab5;
+}
 
-            padding: 100px 7% 60px;
+/* =========================
+   PROGRAMAÇÃO
+========================= */
 
-            position: relative;
+.programacao {
+    background:
+        linear-gradient(
+            180deg,
+            #081d29,
+            #0b2431
+        );
+}
 
-            background-image:
-                linear-gradient(
-                    90deg,
-                    rgba(3, 20, 32, 0.88),
-                    rgba(3, 25, 40, 0.60),
-                    rgba(3, 20, 32, 0.35)
-                ),
-                url("./img/balsasa.jpeg");
-
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+/* =========================
+   BARCOS DE HOJE
+========================= */
 
-        .hero-content {
-            max-width: 430px;
+.today-section {
+    margin-bottom: 40px;
 
-            padding: 25px 28px;
+    background: rgba(255,255,255,.035);
 
-            background: rgba(0, 35, 55, 0.78);
-
-            border: 1px solid rgba(0, 191, 255, 0.30);
+    border: 1px solid rgba(255,255,255,.06);
 
-            border-radius: 15px;
+    border-radius: 18px;
 
-            box-shadow:
-                0 15px 40px rgba(0, 0, 0, 0.35),
-                inset 0 0 25px rgba(0, 150, 220, 0.05);
+    padding: 25px;
+}
 
-            position: relative;
-            z-index: 2;
-        }
+.today-header {
+    margin-bottom: 20px;
+}
 
-        .hero-content h1 {
-            font-size: 38px;
-            margin-bottom: 12px;
-        }
+.today-header h2 {
+    font-size: 23px;
+    margin-bottom: 5px;
+}
 
-        .hero-content h1 span {
-            color: #00bfff;
-        }
+.today-header p {
+    color: #8fa9b5;
+    text-transform: capitalize;
+    font-size: 14px;
+}
 
-        .hero-content p {
-            color: #c7dbe5;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
+.today-boats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+}
 
-        .hero-btn {
-            display: inline-block;
+.today-boat-card {
+    background: #f7fbfd;
+    color: #102b38;
 
-            padding: 13px 22px;
+    border-radius: 14px;
 
-            border-radius: 9px;
+    padding: 18px;
 
-            background: #00aeea;
-            color: white;
+    display: flex;
+    gap: 14px;
 
-            text-decoration: none;
-            font-weight: bold;
+    box-shadow: 0 8px 25px rgba(0,0,0,.15);
+}
 
-            transition: .3s;
-        }
+.today-boat-icon {
+    width: 45px;
+    height: 45px;
 
-        .hero-btn:hover {
-            background: #00c8ff;
-            transform: translateY(-2px);
-        }
+    flex-shrink: 0;
 
-        .port-line {
-            height: 1px;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                #00bfff,
-                transparent
-            );
-            opacity: .4;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        /* =========================
-           SEÇÕES
-        ========================= */
+    background: #e3f5fc;
+    border-radius: 12px;
 
-        .section {
-            max-width: 1200px;
-            margin: auto;
+    font-size: 22px;
+}
 
-            padding: 90px 25px;
-        }
+.today-boat-info h3 {
+    margin-bottom: 5px;
+    font-size: 17px;
+}
 
-        .section-header {
-            margin-bottom: 30px;
-        }
+.today-boat-info p {
+    color: #68808b;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
 
-        .section-header h2 {
-            font-size: 32px;
-            margin-bottom: 8px;
-        }
+.today-status {
+    display: inline-block;
 
-        .section-header p {
-            color: #8faab8;
-        }
+    font-size: 12px;
+    font-weight: bold;
 
-        /* =========================
-           BARCOS DE HOJE
-        ========================= */
+    margin-bottom: 8px;
+}
 
-        .today-section {
-            margin-bottom: 40px;
+.today-boat-info small {
+    display: block;
+    color: #78909b;
+    font-size: 11px;
+    line-height: 1.6;
+}
 
-            padding: 25px;
+.no-today-boats {
+    text-align: center;
+    color: #8fa9b5;
+    padding: 25px;
+}
 
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(0, 53, 80, .7),
-                    rgba(4, 20, 31, .85)
-                );
+/* =========================
+   FILTROS
+========================= */
 
-            border: 1px solid rgba(0, 191, 255, .22);
+.filters {
+    display: grid;
 
-            border-radius: 16px;
+    grid-template-columns: 2fr 1fr 1fr;
 
-            box-shadow:
-                0 15px 40px rgba(0, 0, 0, .18);
-        }
+    gap: 12px;
 
-        .today-header {
-            margin-bottom: 22px;
-        }
+    margin-bottom: 30px;
+}
 
-        .today-header h2 {
-            font-size: 23px;
-            margin-bottom: 7px;
-        }
+.filters input,
+.filters select {
+    width: 100%;
 
-        .today-header p {
-            color: #7fdcff;
-            font-size: 14px;
-            text-transform: capitalize;
-        }
+    padding: 14px 15px;
 
-        .today-boats {
-            display: grid;
+    border: 1px solid rgba(255,255,255,.10);
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(260px, 1fr));
+    border-radius: 10px;
 
-            gap: 15px;
-        }
+    background: #102d3b;
 
-        .today-boat-card {
-            display: flex;
-            gap: 15px;
-            align-items: flex-start;
+    color: white;
 
-            padding: 18px;
+    outline: none;
 
-            background: rgba(2, 18, 29, .8);
+    font-size: 14px;
+}
 
-            border: 1px solid rgba(0, 191, 255, .13);
+.filters input::placeholder {
+    color: #8fa9b5;
+}
 
-            border-radius: 13px;
+.filters input:focus,
+.filters select:focus {
+    border-color: #168dcc;
+}
 
-            transition: .3s;
-        }
+/* =========================
+   LISTA DE BARCOS
+========================= */
 
-        .today-boat-card:hover {
-            transform: translateY(-3px);
+.boat-list {
+    display: grid;
 
-            border-color: rgba(0, 191, 255, .35);
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
 
-            box-shadow:
-                0 10px 30px rgba(0, 150, 220, .08);
-        }
+    gap: 18px;
+}
 
-        .today-boat-icon {
-            width: 42px;
-            height: 42px;
+.boat-card {
+    background: #f8fbfc;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    color: #102b38;
 
-            flex-shrink: 0;
+    border-radius: 15px;
 
-            border-radius: 10px;
+    padding: 22px;
 
-            background: rgba(0, 174, 234, .12);
+    box-shadow: 0 10px 30px rgba(0,0,0,.14);
 
-            font-size: 22px;
-        }
+    transition: .2s;
+}
 
-        .today-boat-info h3 {
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
+.boat-card:hover {
+    transform: translateY(-3px);
+}
 
-        .today-boat-info p {
-            color: #9eb4c0;
-            font-size: 13px;
-            margin-bottom: 9px;
-        }
+.boat-icon {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
 
-        .today-status {
-            display: inline-block;
+.boat-card h3 {
+    font-size: 19px;
+    margin-bottom: 7px;
+}
 
-            padding: 5px 8px;
+.boat-destination {
+    color: #168dcc;
+    font-size: 13px;
+    font-weight: bold;
 
-            border-radius: 6px;
+    margin-bottom: 18px;
+}
 
-            background: rgba(0, 191, 255, .10);
+.boat-info {
+    display: grid;
+    gap: 9px;
+}
 
-            color: #6fdcff;
+.boat-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
 
-            font-size: 11px;
-            font-weight: bold;
-        }
+.boat-info strong {
+    color: #78909b;
+    font-size: 11px;
+    text-transform: uppercase;
+}
 
-        .today-boat-info small {
-            display: block;
+.boat-info span {
+    font-size: 13px;
+}
 
-            margin-top: 9px;
+.no-schedule {
+    color: #7c929d;
+    font-size: 13px;
+    margin-top: 15px;
+}
 
-            color: #718895;
+.no-results {
+    grid-column: 1 / -1;
 
-            font-size: 11px;
-            line-height: 1.6;
-        }
+    text-align: center;
 
-        .no-today-boats,
-        .no-results {
-            padding: 20px;
+    color: #8fa9b5;
 
-            text-align: center;
+    padding: 35px;
+}
 
-            color: #8198a5;
+/* =========================
+   DESTINOS
+========================= */
 
-            border-radius: 10px;
+.destinations {
+    background:
+        linear-gradient(
+            135deg,
+            #edf6fa,
+            #dfeef5
+        );
 
-            background: rgba(0, 0, 0, .15);
-        }
+    color: #102b38;
+}
 
-        /* =========================
-           FILTROS
-        ========================= */
+.destinations .section-title p {
+    color: #718895;
+}
 
-        .filters {
-            display: grid;
+.destinations-grid {
+    display: grid;
 
-            grid-template-columns:
-                1.5fr 1fr 1fr;
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
 
-            gap: 12px;
+    gap: 15px;
+}
 
-            margin-bottom: 30px;
-        }
+.destination-card {
+    background: white;
 
-        .filters input,
-        .filters select {
-            width: 100%;
+    padding: 20px;
 
-            padding: 13px 15px;
+    border-radius: 14px;
 
-            border: 1px solid rgba(0, 191, 255, .18);
+    box-shadow: 0 7px 25px rgba(20,70,90,.10);
 
-            border-radius: 9px;
+    transition: .2s;
+}
 
-            background: rgba(4, 20, 30, .9);
+.destination-card:hover {
+    transform: translateY(-3px);
+}
 
-            color: #e8f4fa;
+.destination-card h3 {
+    color: #123b4e;
+}
 
-            outline: none;
-        }
+/* =========================
+   SOBRE
+========================= */
 
-        .filters input::placeholder {
-            color: #718895;
-        }
+.about {
+    background: #081c27;
+}
 
-        .filters input:focus,
-        .filters select:focus {
-            border-color: #00bfff;
-        }
+.about-box {
+    max-width: 800px;
+    margin: auto;
 
-        /* =========================
-           LISTA DE BARCOS
-        ========================= */
+    text-align: center;
+}
 
-        .boat-list {
-            display: grid;
+.about-box p {
+    color: #a9bdc5;
+    line-height: 1.8;
+}
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(270px, 1fr));
+/* =========================
+   LOCALIZAÇÃO
+========================= */
 
-            gap: 18px;
-        }
+.location {
+    background: #0b2431;
+}
 
-        .boat-card {
-            padding: 22px;
+.location-box {
+    max-width: 750px;
+    margin: auto;
 
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(8, 31, 44, .9),
-                    rgba(3, 17, 27, .9)
-                );
+    background: rgba(255,255,255,.04);
 
-            border: 1px solid rgba(0, 191, 255, .12);
+    border: 1px solid rgba(255,255,255,.07);
 
-            border-radius: 14px;
+    border-radius: 18px;
 
-            transition: .3s;
-        }
+    padding: 30px;
 
-        .boat-card:hover {
-            transform: translateY(-4px);
+    text-align: center;
+}
 
-            border-color: rgba(0, 191, 255, .35);
+.location-box p {
+    color: #a9bdc5;
+    margin: 10px 0;
+}
 
-            box-shadow:
-                0 15px 35px rgba(0, 150, 220, .08);
-        }
+.location-button {
+    display: inline-block;
 
-        .boat-icon {
-            font-size: 25px;
-            margin-bottom: 12px;
-        }
+    margin-top: 15px;
 
-        .boat-card h3 {
-            font-size: 18px;
-            margin-bottom: 6px;
-        }
+    padding: 12px 20px;
 
-        .boat-destination {
-            color: #78d8fa;
-            font-size: 13px;
-            margin-bottom: 18px;
-        }
+    border-radius: 9px;
 
-        .boat-info {
-            display: grid;
-            gap: 8px;
-        }
+    background: #168dcc;
 
-        .boat-info div {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
+    color: white;
 
-            padding: 8px 0;
+    text-decoration: none;
 
-            border-bottom: 1px solid rgba(255,255,255,.05);
-        }
+    font-weight: bold;
+}
 
-        .boat-info strong {
-            color: #7f96a2;
-            font-size: 12px;
-        }
+/* =========================
+   CONTATO
+========================= */
 
-        .boat-info span {
-            color: #d9edf5;
-            font-size: 12px;
-            text-align: right;
-        }
+.contact {
+    text-align: center;
 
-        .no-schedule {
-            color: #778d98;
-            font-size: 13px;
-        }
+    background:
+        linear-gradient(
+            135deg,
+            #06243d,
+            #0c3448
+        );
+}
 
-        /* =========================
-           DESTINOS
-        ========================= */
+.contact p {
+    color: #a9bdc5;
+    margin: 10px 0 20px;
+}
 
-        .destinations-section {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px 25px 90px;
-        }
+.whatsapp-button {
+    display: inline-block;
 
-        .destinations-section h2 {
-            margin-bottom: 25px;
-            font-size: 30px;
-        }
+    background: #168dcc;
 
-        .destinations-grid {
-            display: grid;
+    color: white;
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(180px, 1fr));
+    padding: 14px 24px;
 
-            gap: 14px;
-        }
+    border-radius: 10px;
 
-        .destination-card {
-            padding: 20px;
+    text-decoration: none;
 
-            background: rgba(7, 28, 40, .8);
+    font-weight: bold;
+}
 
-            border: 1px solid rgba(0, 191, 255, .12);
+/* =========================
+   WHATSAPP FLUTUANTE
+========================= */
 
-            border-radius: 12px;
+.whatsapp-float {
+    position: fixed;
 
-            transition: .3s;
-        }
+    right: 20px;
+    bottom: 20px;
 
-        .destination-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(0, 191, 255, .3);
-        }
+    width: 52px;
+    height: 52px;
 
-        .destination-card h3 {
-            font-size: 15px;
-        }
+    border-radius: 50%;
 
-        /* =========================
-           SOBRE
-        ========================= */
+    background: #168dcc;
 
-        .about {
-            text-align: center;
-        }
+    color: white;
 
-        .about p {
-            max-width: 800px;
-            margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            color: #9db2bd;
+    text-decoration: none;
 
-            line-height: 1.8;
-        }
+    font-size: 23px;
 
-        /* =========================
-           LOCALIZAÇÃO
-        ========================= */
+    box-shadow: 0 7px 25px rgba(0,0,0,.3);
 
-        .location {
-            max-width: 1200px;
-            margin: auto;
+    z-index: 999;
+}
 
-            padding: 90px 25px;
-        }
+/* =========================
+   FOOTER
+========================= */
 
-        .location-box {
-            padding: 30px;
+footer {
+    text-align: center;
 
-            background: rgba(7, 28, 40, .8);
+    padding: 25px 15px;
 
-            border: 1px solid rgba(0, 191, 255, .15);
+    background: #05131c;
 
-            border-radius: 15px;
-        }
+    color: #6f8995;
 
-        .location-box p {
-            color: #a5bac4;
-            line-height: 1.8;
-            margin-bottom: 18px;
-        }
+    font-size: 12px;
+}
 
-        .map-btn {
-            display: inline-block;
+/* =========================
+   MOBILE
+========================= */
 
-            padding: 12px 18px;
+@media (max-width: 700px) {
 
-            background: #087eb5;
+    .navbar {
+        min-height: 60px;
+        padding: 0 15px;
+    }
 
-            color: white;
+    .logo {
+        font-size: 17px;
+    }
 
-            border-radius: 8px;
+    nav {
+        display: none;
+    }
 
-            text-decoration: none;
-        }
+    .hero {
+        min-height: 500px;
+        padding: 95px 15px 45px;
+    }
 
-        /* =========================
-           CONTATO
-        ========================= */
+    .hero-box {
+        max-width: 420px;
+        padding: 25px;
+        border-radius: 14px;
+    }
 
-        .contact {
-            max-width: 1200px;
-            margin: auto;
+    .hero h1 {
+        font-size: 36px;
+    }
 
-            padding: 20px 25px 100px;
+    .hero p {
+        font-size: 14px;
+    }
 
-            text-align: center;
-        }
+    section {
+        padding: 55px 15px;
+    }
 
-        .contact p {
-            color: #9db2bd;
-            margin-bottom: 20px;
-        }
+    .section-title h2 {
+        font-size: 27px;
+    }
 
-        .contact-btn {
-            display: inline-block;
+    .filters {
+        grid-template-columns: 1fr;
+    }
 
-            padding: 13px 22px;
+    .today-section {
+        padding: 18px;
+    }
 
-            background: #00a878;
+    .today-boats {
+        grid-template-columns: 1fr;
+    }
 
-            color: white;
+    .boat-list {
+        grid-template-columns: 1fr;
+    }
 
-            text-decoration: none;
+    .destinations-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 
-            border-radius: 9px;
+}
 
-            font-weight: bold;
-        }
-
-        /* =========================
-           WHATSAPP FLUTUANTE
-        ========================= */
-
-        .floating-whatsapp {
-            position: fixed;
-
-            right: 20px;
-            bottom: 20px;
-
-            width: 55px;
-            height: 55px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 50%;
-
-            background: #00b878;
-
-            color: white;
-
-            text-decoration: none;
-
-            font-size: 25px;
-
-            z-index: 999;
-
-            box-shadow:
-                0 8px 25px rgba(0, 0, 0, .3);
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            padding: 25px;
-
-            text-align: center;
-
-            color: #718793;
-
-            font-size: 12px;
-
-            border-top: 1px solid rgba(0, 191, 255, .08);
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 700px) {
-
-            body {
-                width: 100%;
-                overflow-x: hidden;
-            }
-
-            nav {
-                padding: 13px 16px;
-            }
-
-            .logo {
-                font-size: 18px;
-            }
-
-            nav ul {
-                display: none;
-            }
-
-            .hero {
-                min-height: 75vh;
-                padding: 90px 16px 35px;
-                background-position: center center;
-            }
-
-            .hero-content {
-                width: 100%;
-                max-width: 340px;
-                padding: 20px;
-                border-radius: 13px;
-            }
-
-            .hero-content h1 {
-                font-size: 30px;
-                margin-bottom: 10px;
-            }
-
-            .hero-content p {
-                font-size: 13px;
-                line-height: 1.5;
-                margin-bottom: 17px;
-            }
-
-            .hero-btn {
-                padding: 11px 17px;
-                font-size: 13px;
-            }
-
-            .section {
-                width: 100%;
-                padding: 55px 14px;
-            }
-
-            .section-header {
-                margin-bottom: 22px;
-            }
-
-            .section-header h2 {
-                font-size: 25px;
-            }
-
-            .section-header p {
-                font-size: 13px;
-                line-height: 1.5;
-            }
-
-            .today-section {
-                width: 100%;
-                padding: 15px;
-                border-radius: 13px;
-            }
-
-            .today-header h2 {
-                font-size: 20px;
-            }
-
-            .today-header p {
-                font-size: 12px;
-            }
-
-            .today-boats {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .today-boat-card {
-                width: 100%;
-                padding: 13px;
-                gap: 11px;
-            }
-
-            .today-boat-icon {
-                width: 38px;
-                height: 38px;
-                font-size: 19px;
-            }
-
-            .today-boat-info {
-                min-width: 0;
-            }
-
-            .today-boat-info h3 {
-                font-size: 15px;
-            }
-
-            .today-boat-info p {
-                font-size: 12px;
-                overflow-wrap: break-word;
-            }
-
-            .today-status {
-                font-size: 10px;
-            }
-
-            .today-boat-info small {
-                font-size: 10px;
-            }
-
-            .filters {
-                grid-template-columns: 1fr;
-                gap: 9px;
-            }
-
-            .filters input,
-            .filters select {
-                width: 100%;
-                padding: 11px 12px;
-                font-size: 13px;
-            }
-
-            .boat-list {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-
-            .boat-card {
-                width: 100%;
-                padding: 17px;
-            }
-
-            .boat-card h3 {
-                font-size: 16px;
-            }
-
-            .boat-destination {
-                font-size: 12px;
-                margin-bottom: 14px;
-            }
-
-            .boat-info {
-                gap: 5px;
-            }
-
-            .boat-info div {
-                padding: 7px 0;
-                align-items: flex-start;
-            }
-
-            .boat-info strong {
-                font-size: 11px;
-            }
-
-            .boat-info span {
-                font-size: 11px;
-                max-width: 65%;
-                overflow-wrap: break-word;
-            }
-
-            .destinations-section {
-                width: 100%;
-                padding: 15px 14px 60px;
-            }
-
-            .destinations-section h2 {
-                font-size: 25px;
-                margin-bottom: 18px;
-            }
-
-            .destinations-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 9px;
-            }
-
-            .destination-card {
-                padding: 14px;
-            }
-
-            .destination-card h3 {
-                font-size: 13px;
-            }
-
-            .about p {
-                font-size: 13px;
-                line-height: 1.7;
-            }
-
-            .location {
-                width: 100%;
-                padding: 55px 14px;
-            }
-
-            .location-box {
-                padding: 20px;
-                border-radius: 13px;
-            }
-
-            .location-box h2 {
-                font-size: 21px;
-            }
-
-            .location-box p {
-                font-size: 13px;
-                line-height: 1.6;
-            }
-
-            .map-btn {
-                padding: 11px 15px;
-                font-size: 13px;
-            }
-
-            .contact {
-                width: 100%;
-                padding: 15px 14px 80px;
-            }
-
-            .contact h2 {
-                font-size: 24px;
-            }
-
-            .contact p {
-                font-size: 13px;
-                line-height: 1.5;
-            }
-
-            .contact-btn {
-                padding: 11px 17px;
-                font-size: 13px;
-            }
-
-            .floating-whatsapp {
-                width: 48px;
-                height: 48px;
-                right: 14px;
-                bottom: 14px;
-                font-size: 21px;
-            }
-
-            footer {
-                padding: 20px 14px;
-                font-size: 11px;
-            }
-
-        }
-
-    </style>
-
+</style>
 </head>
-
 
 <body>
 
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
-    <nav>
+    <div class="navbar">
 
-        <a href="#inicio" class="logo">
-            Balsa <span>Branca</span>
-        </a>
+        <div class="logo">
+            ⚓ Balsa <span>Branca</span>
+        </div>
 
-        <ul>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#programacao">Programação</a>
+            <a href="#destinos">Destinos</a>
+            <a href="#localizacao">Localização</a>
+            <a href="#contato">Contato</a>
+        </nav>
 
-            <li>
-                <a href="#inicio">Início</a>
-            </li>
-
-            <li>
-                <a href="#programacao">Programação</a>
-            </li>
-
-            <li>
-                <a href="#destinos">Destinos</a>
-            </li>
-
-            <li>
-                <a href="#localizacao">Localização</a>
-            </li>
-
-            <li>
-                <a href="#contato">Contato</a>
-            </li>
-
-        </ul>
-
-    </nav>
+    </div>
 
 </header>
 
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero" id="inicio">
 
     <div class="hero-content">
 
-        <h1>
-            Balsa <span>Branca</span>
-        </h1>
+        <div class="hero-box">
 
-        <p>
-            Serviços portuários e transporte fluvial
-            com informações de embarcações,
-            horários e destinos.
-        </p>
+            <div class="hero-tag">
+                SERVIÇOS PORTUÁRIOS
+            </div>
 
-        <a href="#programacao" class="hero-btn">
-            Ver programação
-        </a>
+            <h1>
+                Balsa Branca
+            </h1>
+
+            <p>
+                Consulte a programação de chegadas,
+                saídas e destinos das embarcações.
+            </p>
+
+            <a
+                href="#programacao"
+                class="hero-button"
+            >
+                Ver programação
+            </a>
+
+        </div>
 
     </div>
 
 </section>
 
 
-<div class="port-line"></div>
+<!-- =========================
+     PROGRAMAÇÃO
+========================= -->
+
+<section
+    class="programacao"
+    id="programacao"
+>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Embarcações
+            </h2>
+
+            <p>
+                Consulte os horários e destinos dos barcos.
+            </p>
+
+        </div>
 
 
-<section class="section" id="programacao">
+        <!-- BARCOS DE HOJE -->
 
-    <div class="section-header">
+        <div class="today-section">
 
-        <h2>
-            Programação das Embarcações
-        </h2>
+            <div class="today-header">
 
-        <p>
-            Consulte os horários de chegada,
-            saída e destinos.
-        </p>
+                <h2 id="todayTitle">
+                    ⚓ Barcos ancorados hoje
+                </h2>
+
+                <p id="todayDate"></p>
+
+            </div>
+
+            <div
+                id="todayBoats"
+                class="today-boats"
+            ></div>
+
+        </div>
+
+
+        <!-- FILTROS -->
+
+        <div class="filters">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔎 Procurar barco ou destino..."
+            >
+
+            <select id="destinationFilter">
+
+                <option value="">
+                    Todos os destinos
+                </option>
+
+            </select>
+
+            <select id="dayFilter">
+
+                <option value="">
+                    Todos os dias
+                </option>
+
+                <option value="1">
+                    Segunda-feira
+                </option>
+
+                <option value="2">
+                    Terça-feira
+                </option>
+
+                <option value="3">
+                    Quarta-feira
+                </option>
+
+                <option value="4">
+                    Quinta-feira
+                </option>
+
+                <option value="5">
+                    Sexta-feira
+                </option>
+
+                <option value="6">
+                    Sábado
+                </option>
+
+                <option value="0">
+                    Domingo
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- LISTA COMPLETA -->
+
+        <div
+            class="boat-list"
+            id="boatList"
+        ></div>
 
     </div>
 
+</section>
 
-    <section class="today-section">
 
-        <div class="today-header">
+<!-- =========================
+     DESTINOS
+========================= -->
 
-            <h2 id="todayTitle">
-                ⚓ Barcos ancorados hoje
+<section
+    class="destinations"
+    id="destinos"
+>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Encontre sua embarcação
             </h2>
 
-            <p id="todayDate"></p>
+            <p>
+                Selecione um destino para consultar os barcos.
+            </p>
 
         </div>
 
         <div
-            id="todayBoats"
-            class="today-boats">
+            class="destinations-grid"
+            id="destinationsGrid"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SOBRE
+========================= -->
+
+<section class="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Sobre a Balsa Branca
+            </h2>
+
         </div>
 
-    </section>
+        <div class="about-box">
 
+            <p>
+                A Balsa Branca trabalha com serviços
+                portuários e disponibiliza informações
+                sobre a programação das embarcações,
+                incluindo chegadas, saídas, horários
+                e destinos.
+            </p>
 
-    <div class="filters">
+            <br>
 
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="🔎 Procurar barco ou destino..."
-        >
+            <p>
+                As informações apresentadas neste site
+                têm caráter informativo. A Balsa Branca
+                não se responsabiliza pelo transporte ou
+                recebimento de encomendas e mercadorias.
+            </p>
 
-        <select id="destinationFilter">
+        </div>
 
-            <option value="">
-                Todos os destinos
-            </option>
-
-        </select>
-
-        <select id="dayFilter">
-
-            <option value="">
-                Todos os dias
-            </option>
-
-            <option value="1">
-                Segunda-feira
-            </option>
-
-            <option value="2">
-                Terça-feira
-            </option>
-
-            <option value="3">
-                Quarta-feira
-            </option>
-
-            <option value="4">
-                Quinta-feira
-            </option>
-
-            <option value="5">
-                Sexta-feira
-            </option>
-
-            <option value="6">
-                Sábado
-            </option>
-
-            <option value="0">
-                Domingo
-            </option>
-
-        </select>
-
-    </div>
-
-
-    <div
-        class="boat-list"
-        id="boatList">
     </div>
 
 </section>
 
 
-<section
-    class="destinations-section"
-    id="destinos">
-
-    <h2>
-        Destinos
-    </h2>
-
-    <div
-        class="destinations-grid"
-        id="destinationsGrid">
-    </div>
-
-</section>
-
-
-<section class="section about">
-
-    <div class="section-header">
-
-        <h2>
-            Sobre a Balsa Branca
-        </h2>
-
-    </div>
-
-    <p>
-        A Balsa Branca oferece serviços portuários
-        e informações sobre embarcações que realizam
-        viagens pelo interior do Amazonas.
-        Consulte nossa programação para conferir
-        horários, destinos e embarcações.
-    </p>
-
-</section>
-
+<!-- =========================
+     LOCALIZAÇÃO
+========================= -->
 
 <section
     class="location"
-    id="localizacao">
+    id="localizacao"
+>
 
-    <div class="location-box">
+    <div class="container">
 
-        <h2>
-            📍 Localização
-        </h2>
+        <div class="section-title">
 
-        <br>
+            <h2>
+                📍 Localização
+            </h2>
+
+        </div>
+
+        <div class="location-box">
+
+            <p>
+                Rua Lourenço da Silva Braga,
+                Centro, Manaus - AM
+            </p>
+
+            <a
+                class="location-button"
+                href="https://www.google.com/maps/search/?api=1&query=Rua+Lourenço+da+Silva+Braga,+Centro,+Manaus,+AM"
+                target="_blank"
+            >
+                Ver no Google Maps
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTATO
+========================= -->
+
+<section
+    class="contact"
+    id="contato"
+>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Ficou com alguma dúvida?
+            </h2>
+
+        </div>
 
         <p>
-            Rua Lourenço da Silva Braga,
-            Centro, Manaus - AM
+            Entre em contato com a Balsa Branca.
         </p>
 
         <p>
@@ -1144,12 +1028,11 @@
         </p>
 
         <a
-            class="map-btn"
-            href="https://www.google.com/maps/search/?api=1&query=Rua+Lourenço+da+Silva+Braga,+Centro,+Manaus,+AM"
-            target="_blank">
-
-            Abrir no Google Maps
-
+            class="whatsapp-button"
+            href="https://wa.me/5592991496097"
+            target="_blank"
+        >
+            Falar pelo WhatsApp
         </a>
 
     </div>
@@ -1157,42 +1040,22 @@
 </section>
 
 
-<section
-    class="contact"
-    id="contato">
-
-    <h2>
-        Entre em contato
-    </h2>
-
-    <br>
-
-    <p>
-        Fale conosco para mais informações
-        sobre viagens e embarcações.
-    </p>
-
-    <a
-        class="contact-btn"
-        href="https://wa.me/5592991496097"
-        target="_blank">
-
-        💬 Falar pelo WhatsApp
-
-    </a>
-
-</section>
-
+<!-- =========================
+     WHATSAPP
+========================= -->
 
 <a
     href="https://wa.me/5592991496097"
     target="_blank"
-    class="floating-whatsapp">
-
+    class="whatsapp-float"
+>
     💬
-
 </a>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1204,9 +1067,9 @@
 
 <script>
 
-// ======================================================
-// BARCOS
-// ======================================================
+/* =====================================================
+   BARCOS
+===================================================== */
 
 const boats = [
 
@@ -1431,9 +1294,9 @@ const boats = [
 ];
 
 
-// ======================================================
-// ELEMENTOS
-// ======================================================
+/* =====================================================
+   ELEMENTOS
+===================================================== */
 
 const todayBoats =
     document.getElementById("todayBoats");
@@ -1454,9 +1317,9 @@ const destinationsGrid =
     document.getElementById("destinationsGrid");
 
 
-// ======================================================
-// DIAS
-// ======================================================
+/* =====================================================
+   DIAS
+===================================================== */
 
 function getBoatDays(text) {
 
@@ -1464,8 +1327,7 @@ function getBoatDays(text) {
 
     const days = [];
 
-    const value =
-        text.toLowerCase();
+    const value = text.toLowerCase();
 
     if (value.includes("domingo"))
         days.push(0);
@@ -1492,13 +1354,14 @@ function getBoatDays(text) {
 }
 
 
-// ======================================================
-// HORÁRIO
-// ======================================================
+/* =====================================================
+   HORÁRIO DE SAÍDA
+===================================================== */
 
 function getBoatTime(boat) {
 
-    if (!boat.time) return null;
+    if (!boat.time)
+        return null;
 
     const parts =
         boat.time.split(":");
@@ -1513,16 +1376,17 @@ function getBoatTime(boat) {
 }
 
 
-// ======================================================
-// DATA
-// ======================================================
+/* =====================================================
+   DATA DE HOJE
+===================================================== */
 
 function updateTodayDate() {
 
     const element =
         document.getElementById("todayDate");
 
-    if (!element) return;
+    if (!element)
+        return;
 
     const now =
         new Date();
@@ -1540,33 +1404,39 @@ function updateTodayDate() {
 }
 
 
-// ======================================================
-// CHEGADA / SAÍDA
-// ======================================================
+/* =====================================================
+   VERIFICA SE CHEGA HOJE
+===================================================== */
 
 function arrivesToday(boat) {
 
-    return getBoatDays(
-        boat.arrival
-    ).includes(
+    const days =
+        getBoatDays(boat.arrival);
+
+    return days.includes(
         new Date().getDay()
     );
 }
 
+
+/* =====================================================
+   VERIFICA SE SAI HOJE
+===================================================== */
 
 function leavesToday(boat) {
 
-    return getBoatDays(
-        boat.departure
-    ).includes(
+    const days =
+        getBoatDays(boat.departure);
+
+    return days.includes(
         new Date().getDay()
     );
 }
 
 
-// ======================================================
-// ÚLTIMO EVENTO
-// ======================================================
+/* =====================================================
+   ÚLTIMA CHEGADA
+===================================================== */
 
 function getLastEventDate(
     days,
@@ -1574,7 +1444,7 @@ function getLastEventDate(
     now
 ) {
 
-    if (!days.length || !time)
+    if (!days.length)
         return null;
 
     let lastEvent = null;
@@ -1594,36 +1464,40 @@ function getLastEventDate(
             )
         ) {
 
+            /*
+             * A chegada não possui horário.
+             * Consideramos a chegada às 08:00.
+             */
+
             date.setHours(
-                time.hour,
-                time.minute,
+                8,
+                0,
                 0,
                 0
             );
 
             if (
-                date <= now &&
-                (
-                    !lastEvent ||
-                    date > lastEvent
-                )
+                date <= now
             ) {
 
-                lastEvent = date;
+                if (
+                    !lastEvent ||
+                    date > lastEvent
+                ) {
 
+                    lastEvent = date;
+                }
             }
-
         }
-
     }
 
     return lastEvent;
 }
 
 
-// ======================================================
-// ESTÁ ANCORADO
-// ======================================================
+/* =====================================================
+   VERIFICA SE ESTÁ ANCORADO
+===================================================== */
 
 function isAnchoredToday(boat) {
 
@@ -1654,15 +1528,53 @@ function isAnchoredToday(boat) {
             now
         );
 
-    const lastDeparture =
-        getLastEventDate(
-            departureDays,
-            time,
-            now
-        );
-
     if (!lastArrival)
         return false;
+
+
+    /*
+     * Procuramos a última saída.
+     */
+
+    let lastDeparture = null;
+
+    for (let i = 0; i <= 7; i++) {
+
+        const date =
+            new Date(now);
+
+        date.setDate(
+            now.getDate() - i
+        );
+
+        if (
+            departureDays.includes(
+                date.getDay()
+            )
+        ) {
+
+            date.setHours(
+                time.hour,
+                time.minute,
+                0,
+                0
+            );
+
+            if (
+                date <= now
+            ) {
+
+                if (
+                    !lastDeparture ||
+                    date > lastDeparture
+                ) {
+
+                    lastDeparture = date;
+                }
+            }
+        }
+    }
+
 
     if (
         lastDeparture &&
@@ -1675,9 +1587,303 @@ function isAnchoredToday(boat) {
 }
 
 
-// ======================================================
-// BARCOS DE HOJE
-// ======================================================
+/* =====================================================
+   FILTRO DE DESTINOS
+===================================================== */
+
+function renderDestinationFilter() {
+
+    if (!destinationFilter)
+        return;
+
+    const destinations = [
+        ...new Set(
+            boats.flatMap(
+                boat => boat.destinations
+            )
+        )
+    ].sort(
+        (a, b) =>
+            a.localeCompare(
+                b,
+                "pt-BR"
+            )
+    );
+
+    destinationFilter.innerHTML = `
+        <option value="">
+            Todos os destinos
+        </option>
+
+        ${destinations.map(
+            destination => `
+                <option value="${destination}">
+                    ${destination}
+                </option>
+            `
+        ).join("")}
+    `;
+}
+
+
+/* =====================================================
+   LISTA COMPLETA DE BARCOS
+===================================================== */
+
+function renderBoats() {
+
+    if (!boatList)
+        return;
+
+    const search =
+        (
+            searchInput?.value || ""
+        )
+        .toLowerCase()
+        .trim();
+
+    const destination =
+        destinationFilter?.value || "";
+
+    const day =
+        dayFilter?.value || "";
+
+
+    const filtered =
+        boats.filter(boat => {
+
+            const matchesSearch =
+                !search ||
+                boat.name
+                    .toLowerCase()
+                    .includes(search) ||
+                boat.destinations.some(
+                    dest =>
+                        dest
+                        .toLowerCase()
+                        .includes(search)
+                );
+
+
+            const matchesDestination =
+                !destination ||
+                boat.destinations.includes(
+                    destination
+                );
+
+
+            const days = [
+                ...new Set([
+                    ...getBoatDays(
+                        boat.arrival
+                    ),
+                    ...getBoatDays(
+                        boat.departure
+                    )
+                ])
+            ];
+
+
+            const matchesDay =
+                !day ||
+                days.includes(
+                    Number(day)
+                );
+
+
+            return (
+                matchesSearch &&
+                matchesDestination &&
+                matchesDay
+            );
+
+        });
+
+
+    boatList.innerHTML = "";
+
+
+    if (!filtered.length) {
+
+        boatList.innerHTML = `
+            <div class="no-results">
+                Nenhuma embarcação encontrada.
+            </div>
+        `;
+
+        return;
+    }
+
+
+    filtered.forEach(boat => {
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            "boat-card";
+
+
+        if (
+            !boat.arrival ||
+            !boat.departure ||
+            !boat.time
+        ) {
+
+            card.innerHTML = `
+
+                <div class="boat-icon">
+                    🚢
+                </div>
+
+                <h3>
+                    ${boat.name}
+                </h3>
+
+                <div class="boat-destination">
+                    ${boat.destinations.join(", ")}
+                </div>
+
+                <p class="no-schedule">
+                    Programação não disponível.
+                </p>
+
+            `;
+
+        } else {
+
+            card.innerHTML = `
+
+                <div class="boat-icon">
+                    🚢
+                </div>
+
+                <h3>
+                    ${boat.name}
+                </h3>
+
+                <div class="boat-destination">
+                    ${boat.destinations.join(", ")}
+                </div>
+
+                <div class="boat-info">
+
+                    <div>
+                        <strong>
+                            Chegada
+                        </strong>
+
+                        <span>
+                            ${boat.arrival}
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong>
+                            Saída
+                        </strong>
+
+                        <span>
+                            ${boat.departure}
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong>
+                            Horário de saída
+                        </strong>
+
+                        <span>
+                            ${boat.time}
+                        </span>
+                    </div>
+
+                </div>
+
+            `;
+        }
+
+
+        boatList.appendChild(card);
+
+    });
+}
+
+
+/* =====================================================
+   DESTINOS
+===================================================== */
+
+function renderDestinations() {
+
+    if (!destinationsGrid)
+        return;
+
+    const destinations = [
+        ...new Set(
+            boats.flatMap(
+                boat => boat.destinations
+            )
+        )
+    ].sort(
+        (a, b) =>
+            a.localeCompare(
+                b,
+                "pt-BR"
+            )
+    );
+
+
+    destinationsGrid.innerHTML = "";
+
+
+    destinations.forEach(destination => {
+
+        const count =
+            boats.filter(
+                boat =>
+                    boat.destinations.includes(
+                        destination
+                    )
+            ).length;
+
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            "destination-card";
+
+
+        card.innerHTML = `
+
+            <h3>
+                📍 ${destination}
+            </h3>
+
+            <p
+                style="
+                    color:#718895;
+                    font-size:12px;
+                    margin-top:7px;
+                "
+            >
+                ${count}
+                embarcação${count !== 1 ? "ões" : ""}
+            </p>
+
+        `;
+
+
+        destinationsGrid.appendChild(card);
+
+    });
+}
+
+
+/* =====================================================
+   BARCOS DE HOJE
+===================================================== */
 
 function renderToday() {
 
@@ -1687,6 +1893,7 @@ function renderToday() {
         return;
 
     todayBoats.innerHTML = "";
+
 
     const now =
         new Date();
@@ -1715,6 +1922,11 @@ function renderToday() {
             getBoatTime(boat);
 
 
+        /*
+         * Sem programação completa,
+         * não aparece em "Barcos de hoje".
+         */
+
         if (
             !arrivalDays.length ||
             !departureDays.length ||
@@ -1728,27 +1940,64 @@ function renderToday() {
             time.hour * 60 +
             time.minute;
 
+
         const arriving =
-            arrivalDays.includes(today);
+            arrivalDays.includes(
+                today
+            );
 
         const leaving =
-            departureDays.includes(today);
+            departureDays.includes(
+                today
+            );
+
 
         let status = "";
 
 
-        // SAINDO HOJE
+        /*
+         * =========================================
+         * DIA DE SAÍDA
+         * =========================================
+         */
 
         if (leaving) {
 
+            /*
+             * Se ainda não chegou ao horário
+             * de saída, continua na balsa.
+             */
+
             if (
-                currentMinutes < boatMinutes
+                currentMinutes <
+                boatMinutes
             ) {
+
+                /*
+                 * Se também chega hoje,
+                 * mostramos que chega e sai.
+                 */
 
                 if (arriving) {
 
-                    status =
-                        "🟡 Chegando e saindo hoje";
+                    /*
+                     * Antes das 08:00:
+                     * ainda está chegando.
+                     */
+
+                    if (
+                        now.getHours() < 8
+                    ) {
+
+                        status =
+                            "🟢 Chegando hoje";
+
+                    } else {
+
+                        status =
+                            "🟡 Chegando e saindo hoje";
+
+                    }
 
                 } else {
 
@@ -1759,22 +2008,30 @@ function renderToday() {
 
             } else {
 
-                // Já passou da hora de saída.
-                // Não aparece mais em "Barcos de hoje".
+                /*
+                 * Chegou o horário de saída.
+                 * Remove da lista.
+                 */
 
                 return;
-
             }
 
-        }
 
+        /*
+         * =========================================
+         * DIA DE CHEGADA
+         * =========================================
+         */
 
-        // CHEGANDO HOJE
+        } else if (arriving) {
 
-        else if (arriving) {
+            /*
+             * Antes das 08:00:
+             * ainda consideramos que está chegando.
+             */
 
             if (
-                currentMinutes < boatMinutes
+                now.getHours() < 8
             ) {
 
                 status =
@@ -1782,17 +2039,24 @@ function renderToday() {
 
             } else {
 
+                /*
+                 * A partir das 08:00,
+                 * já consideramos que chegou.
+                 */
+
                 status =
                     "⚓ Ancorado";
 
             }
 
-        }
 
+        /*
+         * =========================================
+         * DIA ENTRE CHEGADA E SAÍDA
+         * =========================================
+         */
 
-        // JÁ ESTÁ ANCORADO
-
-        else {
+        } else {
 
             if (
                 isAnchoredToday(boat)
@@ -1810,11 +2074,18 @@ function renderToday() {
         }
 
 
+        /*
+         * =========================================
+         * CARD
+         * =========================================
+         */
+
         const card =
             document.createElement("div");
 
         card.className =
             "today-boat-card";
+
 
         card.innerHTML = `
 
@@ -1837,6 +2108,7 @@ function renderToday() {
                 </span>
 
                 <small>
+
                     Chegada:
                     ${boat.arrival}
 
@@ -1847,28 +2119,38 @@ function renderToday() {
 
                     <br>
 
-                    Horário:
+                    Horário de saída:
                     ${boat.time}
+
                 </small>
 
             </div>
 
         `;
 
+
         todayBoats.appendChild(card);
 
     });
 
 
+    /*
+     * Nenhum barco hoje
+     */
+
     if (
-        todayBoats.children.length === 0
+        !todayBoats.children.length
     ) {
 
         todayBoats.innerHTML = `
+
             <div class="no-today-boats">
-                Nenhum barco programado para estar
-                ancorado hoje.
+
+                Nenhum barco programado
+                para estar ancorado hoje.
+
             </div>
+
         `;
 
     }
@@ -1876,359 +2158,43 @@ function renderToday() {
 }
 
 
-// ======================================================
-// LISTA COMPLETA DOS BARCOS
-// ======================================================
-
-function renderBoats() {
-
-    if (!boatList)
-        return;
-
-    const search =
-        searchInput.value
-            .toLowerCase()
-            .trim();
-
-    const destination =
-        destinationFilter.value;
-
-    const day =
-        dayFilter.value;
-
-
-    const filtered =
-        boats.filter(boat => {
-
-            const matchesSearch =
-                !search ||
-                boat.name
-                    .toLowerCase()
-                    .includes(search) ||
-                boat.destinations
-                    .join(" ")
-                    .toLowerCase()
-                    .includes(search);
-
-
-            const matchesDestination =
-                !destination ||
-                boat.destinations.includes(
-                    destination
-                );
-
-
-            const boatDays =
-                [
-                    ...getBoatDays(boat.arrival),
-                    ...getBoatDays(boat.departure)
-                ];
-
-
-            const matchesDay =
-                !day ||
-                boatDays.includes(
-                    Number(day)
-                );
-
-
-            return (
-                matchesSearch &&
-                matchesDestination &&
-                matchesDay
-            );
-
-        });
-
-
-    boatList.innerHTML = "";
-
-
-    if (
-        filtered.length === 0
-    ) {
-
-        boatList.innerHTML = `
-            <div class="no-results">
-                Nenhuma embarcação encontrada.
-            </div>
-        `;
-
-        return;
-    }
-
-
-    filtered.forEach(boat => {
-
-        const card =
-            document.createElement("div");
-
-        card.className =
-            "boat-card";
-
-
-        let scheduleHTML = "";
-
-
-        if (
-            !boat.arrival &&
-            !boat.departure &&
-            !boat.time
-        ) {
-
-            scheduleHTML = `
-                <div class="no-schedule">
-                    Horário não disponível.
-                </div>
-            `;
-
-        } else {
-
-            scheduleHTML = `
-
-                <div class="boat-info">
-
-                    <div>
-                        <strong>Chegada</strong>
-                        <span>
-                            ${boat.arrival || "Não disponível"}
-                        </span>
-                    </div>
-
-                    <div>
-                        <strong>Saída</strong>
-                        <span>
-                            ${boat.departure || "Não disponível"}
-                        </span>
-                    </div>
-
-                    <div>
-                        <strong>Horário</strong>
-                        <span>
-                            ${boat.time || "Não disponível"}
-                        </span>
-                    </div>
-
-                </div>
-
-            `;
-
-        }
-
-
-        card.innerHTML = `
-
-            <div class="boat-icon">
-                🚢
-            </div>
-
-            <h3>
-                ${boat.name}
-            </h3>
-
-            <div class="boat-destination">
-                📍 ${boat.destinations.join(", ")}
-            </div>
-
-            ${scheduleHTML}
-
-        `;
-
-
-        boatList.appendChild(card);
-
-    });
-
-}
-
-
-// ======================================================
-// DESTINOS
-// ======================================================
-
-function renderDestinations() {
-
-    if (!destinationsGrid)
-        return;
-
-
-    const destinations = [
-        ...new Set(
-            boats.flatMap(
-                boat => boat.destinations
-            )
-        )
-    ];
-
-
-    destinations.sort(
-        (a, b) =>
-            a.localeCompare(b)
-    );
-
-
-    destinationsGrid.innerHTML = "";
-
-
-    destinations.forEach(destination => {
-
-        const card =
-            document.createElement("div");
-
-        card.className =
-            "destination-card";
-
-
-        const count =
-            boats.filter(
-                boat =>
-                    boat.destinations.includes(
-                        destination
-                    )
-            ).length;
-
-
-        card.innerHTML = `
-
-            <h3>
-                📍 ${destination}
-            </h3>
-
-            <p style="
-                color:#718895;
-                font-size:12px;
-                margin-top:7px;
-            ">
-                ${count}
-                ${count === 1
-                    ? "embarcação"
-                    : "embarcações"}
-            </p>
-
-        `;
-
-
-        card.addEventListener(
-            "click",
-            () => {
-
-                destinationFilter.value =
-                    destination;
-
-                renderBoats();
-
-                document
-                    .getElementById(
-                        "programacao"
-                    )
-                    .scrollIntoView({
-                        behavior: "smooth"
-                    });
-
-            }
-        );
-
-
-        destinationsGrid.appendChild(card);
-
-    });
-
-}
-
-
-// ======================================================
-// PREENCHER FILTRO DE DESTINOS
-// ======================================================
-
-function populateDestinationFilter() {
-
-    if (!destinationFilter)
-        return;
-
-
-    const destinations = [
-        ...new Set(
-            boats.flatMap(
-                boat => boat.destinations
-            )
-        )
-    ];
-
-
-    destinations.sort(
-        (a, b) =>
-            a.localeCompare(b)
-    );
-
-
-    destinations.forEach(destination => {
-
-        const option =
-            document.createElement("option");
-
-        option.value =
-            destination;
-
-        option.textContent =
-            destination;
-
-        destinationFilter.appendChild(
-            option
-        );
-
-    });
-
-}
-
-
-// ======================================================
-// FILTROS
-// ======================================================
-
-if (searchInput) {
-
-    searchInput.addEventListener(
-        "input",
-        renderBoats
-    );
-
-}
-
-
-if (destinationFilter) {
-
-    destinationFilter.addEventListener(
-        "change",
-        renderBoats
-    );
-
-}
-
-
-if (dayFilter) {
-
-    dayFilter.addEventListener(
-        "change",
-        renderBoats
-    );
-
-}
-
-
-// ======================================================
-// INICIALIZAÇÃO
-// ======================================================
-
-populateDestinationFilter();
-
-renderBoats();
+/* =====================================================
+   FILTROS
+===================================================== */
+
+searchInput?.addEventListener(
+    "input",
+    renderBoats
+);
+
+destinationFilter?.addEventListener(
+    "change",
+    renderBoats
+);
+
+dayFilter?.addEventListener(
+    "change",
+    renderBoats
+);
+
+
+/* =====================================================
+   INICIALIZAÇÃO
+===================================================== */
+
+renderDestinationFilter();
 
 renderDestinations();
+
+renderBoats();
 
 renderToday();
 
 
-// Atualiza "Barcos de hoje" automaticamente.
+/*
+ * Atualiza a seção "Barcos de hoje"
+ * a cada 30 segundos.
+ */
 
 setInterval(
     renderToday,
@@ -2238,5 +2204,4 @@ setInterval(
 </script>
 
 </body>
-
 </html>
